@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         notNull: { msg: "SenderId is required" }
       }
     },
-    receiverId: {
+    ReceiverId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: { model: "Users", key: "id" },
