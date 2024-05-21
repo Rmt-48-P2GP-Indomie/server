@@ -1,0 +1,32 @@
+[
+  {
+    "email": "alexander@email.com",
+    "username": "alexander",
+    "password": "alexander123",
+    "phoneNumber": "123456789",
+    "address": "jl.oxford jaya mandiri"
+
+  },
+  {
+    "email": "graham@email.com",
+    "username": "graham",
+    "password": "graham123",
+    "phoneNumber": "987654321",
+    "address": "jl.cambridge abadi mandiri"
+  },
+  {
+    "email": "gabrielle@email.com",
+    "username": "gabrielle",
+    "password": "gabrielle123",
+    "phoneNumber": "456123789",
+    "address": "jl.harvard mustika mandiri"
+
+  },
+  {
+    "email": "ellen@email.com",
+    "username": "ellen",
+    "password": "ellen123",
+    "phoneNumber": "456789123",
+    "address": "jl.cambridge sentosa mandiri"
+  }
+]

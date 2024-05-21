@@ -1,0 +1,26 @@
+[
+  {
+    "UserId": 1,
+    "fullname": "Alexander Duterte",
+    "profileImageUrl": "https://media.vanityfair.com/photos/6258742267f4b24bbe87221a/3:2/w_1788,h_1192,c_limit/alexander-skarsgard-2022-portrait-lede.png",
+    "bio": "Hello, My Friend !"
+  },
+  {
+    "UserId": 2,
+    "fullname": "Graham Jhon",
+    "profileImageUrl": "https://mbnconsulting.id/wp-content/uploads/2023/04/7-Tips-Efektif-Yang-Wajib-Dilakukan-Para-CEO-Dalam-Mengelola-Bisnisnya-1.jpg",
+    "bio": "Sok atuh, gaskeun !"
+  },
+  {
+    "UserId": 3,
+    "fullname": "Gabrielle Jessica",
+    "profileImageUrl": "https://asset-a.grid.id/crop/73x0:655x453/360x240/photo/2022/10/29/wanita-karir-suksesjpg-202201280-20221029074438.jpg",
+    "bio": "Bootcamp ? haha"
+  },
+  {
+    "UserId": 4,
+    "fullname": "ellen Kristanti",
+    "profileImageUrl": "https://www.shutterstock.com/image-photo/asian-businesswoman-freelancer-standing-near-600nw-2277359599.jpg",
+    "bio": "go with the wind~~~"
+  }
+]
