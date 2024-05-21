@@ -1,6 +1,6 @@
 const { comparepassword } = require("../helper/bcrypt");
 const { createToken } = require("../helper/jwt");
-const { User } = require("../models");
+const { User, Profile } = require("../models");
 
 class UserController {
     static async register(req, res, next) {
@@ -46,6 +46,25 @@ class UserController {
         } catch (error) {
             next(error)
         }
+    }
+
+    static async currentlyLoggedUser(req, res, next) {
+        try {
+            const user = await User.findOne({
+              where: { id: req.user.id },
+              attributes: { exclude: ["password"] },
+              include: [
+                {
+                  model: Profile,
+                  as: "Profile",
+                },
+              ],
+            });
+            res.status(200).json(user);
+          } catch (error) {
+            next(error);
+            console.log(error);
+          }
     }
 }
 

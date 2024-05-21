@@ -32,6 +32,10 @@ function errorHandler (error, req, res, next) {
             status = 401;
             message = "Unauthenticated!";
             break;
+        case "CustomError":
+            status = error.status;
+            message = error.message;
+            break;
         default:
             break;
     }
