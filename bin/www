@@ -1,16 +1,43 @@
+const { Op } = require("sequelize");
 const app = require("../app");
+const { verifyToken } = require("../helper/jwt");
+const { ChatMessage, User, Profile } = require("../models");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
-        origin: "*"
+        origin:  "*", 
+        methods: ["GET", "POST"]
     }
 });
 const port = process.env.PORT || 3000;
 
-io.on("connection", (socket) => {
-  // ...
+io.on('connection', (socket) => {
+  console.log('a user connected', socket.id);
+  
+  socket.on('sendMessage', async (data) => {
+    console.log(data)
+    const {username, text, access_token} = data;
+
+    let payload = verifyToken(access_token)
+    let userLoggedIn = await User.findByPk(payload.id)
+
+    const findReceivedUser = await User.findOne({
+      where: { username: username },
+    });
+  
+    await ChatMessage.create({
+      text,
+      SenderId: userLoggedIn.id,
+      ReceiverId: findReceivedUser.id,
+    });
+    io.emit('sendMessage/response');
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
 });
 
 // app listener

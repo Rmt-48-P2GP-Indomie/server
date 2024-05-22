@@ -6,6 +6,7 @@ class UserController {
     static async register(req, res, next) {
         try {
             const data = await User.create(req.body);
+            await Profile.create({UserId: data.id})
             res.status(201).json({ id: data.id, username: data.username, email: data.email });
         } catch (error) {
             console.log(error.message)
