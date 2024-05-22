@@ -79,6 +79,7 @@ class MessageController {
     try {
       const { username } = req.params;
       let { text } = req.body;
+      console.log(text)
       if (!text) {
         throw {
           name: "CustomError",
