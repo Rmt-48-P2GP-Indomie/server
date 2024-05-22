@@ -1,0 +1,22 @@
+[
+  { 
+    "SenderId": 1, 
+    "ReceiverId": 2, 
+    "text": "Hello friends!" 
+  },
+  { 
+    "SenderId": 2, 
+    "ReceiverId": 1, 
+    "text": "Hello to you too, friends!"
+  },
+  { 
+    "SenderId": 3,
+    "ReceiverId": 4,
+    "text": "Hello Charlie!"
+  },
+  { 
+    "SenderId": 4,
+    "ReceiverId": 3,
+    "text": "I'm busy, text me later okay!"
+  }
+]

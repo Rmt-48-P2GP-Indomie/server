@@ -1,0 +1,38 @@
+Ringkasan server How-To
+
+npm init -y
+npm i pg express sequelize sequelize-cli nodemon
+npx sequelize init
+npx sequelize db:create
+
+package
+npm i bcryptjs
+npm i jsonwebtoken
+npm i cors
+npm i dotenv --save
+
+npx sequelize model:generate --name User --attributes email:string,username:string,password:string,phoneNumber:string,address:string
+
+npx sequelize model:generate --name Profile --attributes UserId:integer,fullname:string,profileImageUrl:string,bio:string
+
+npx sequelize model:generate --name ChatMessage --attributes SenderId:integer,ReceiverId:integer,text:string
+
+buat folder helpers utk file bcrypt sebelum seed user (hashing password)
+
+buat langsung file jwt dalam helpers (opsional)
+
+sesuaikan di folder migrations dan models
+
+npx sequelize db:migrate
+________________________________________________________________________________________________________________________________________________________________________________________
+
+npx sequelize seed:generate --name seedUsers
+
+npx sequelize seed:generate --name seedProfiles
+
+npx sequelize seed:generate --name seedChatMessage
+
+sesuaikan di folder seeders dan buat up dan down nya (jangan lupa truncate,cascade, restart identity)
+
+npx sequelize db:seed:all
+________________________________________________________________________________________________________________________________________________________________________________________
